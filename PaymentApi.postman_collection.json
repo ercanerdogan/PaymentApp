@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "a6e7ae81-bfc6-4937-8362-5e33894c330f",
+		"name": "PaymentApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreatePaymentWithOrder-CheckAmount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CreationDate\": \"2021-12-20T21:49:10.000Z\",\r\n  \"Amount\": 0,\r\n  \"CurrencyCode\": \"USD\",\r\n  \"//Status code description\": \"(1-Created, 2-Completed, 3-Failed)\",\r\n  \"Status\": 1,   \r\n  \"Order\": {\r\n    \"ConsumerFullName\": \"Ercan Erdogan\",\r\n    \"ConsumerAddress\": \"Izmir - Turkey\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Payment",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePaymentWithOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"CreationDate\": \"2021-12-20T21:49:10.000Z\",\r\n  \"Amount\": 15,\r\n  \"CurrencyCode\": \"USD\",\r\n  \"//Status code description\": \"(1-Created, 2-Completed, 3-Failed)\",\r\n  \"Status\": 1,   \r\n  \"Order\": {\r\n    \"ConsumerFullName\": \"Ercan Erdogan\",\r\n    \"ConsumerAddress\": \"Izmir - Turkey\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Payment",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPaymentById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/Payment/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Payment",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPayments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/Payment",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
