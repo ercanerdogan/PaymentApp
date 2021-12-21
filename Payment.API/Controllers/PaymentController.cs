@@ -24,14 +24,14 @@ namespace Payment.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<List<Payment.Core.Entities.Payment>> GetPayments()
+        public async Task<List<Payment.Core.Entities.Payment>> GetPayment()
         {
             return (List<Payment.Core.Entities.Payment>) await _repository.GetAllAsync();
             
         }
 
         [HttpGet("{Id}")]
-        public async Task<IActionResult> GetById(int Id)
+        public async Task<IActionResult> GetPayment(int Id)
         {
             var result = await _repository.GetByIdAsync(Id);
             if(result is null)
@@ -54,8 +54,7 @@ namespace Payment.API.Controllers
             var newPayment = await _repository.AddAsync(paymentEntity);
             var paymentResponse = PaymentMapper.Mapper.Map<PaymentResponse>(newPayment);
 
-
-            return Ok(paymentResponse);
+            return CreatedAtAction("GetPayment", paymentResponse);
         }
 
     }
