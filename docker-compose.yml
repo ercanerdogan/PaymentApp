@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  paymentapi:
+    image: ${DOCKER_REGISTRY-}paymentapi
+    build:
+      context: .
+      dockerfile: Payment.API/Dockerfile
+    environment:
+      - "UseInMemoryDatabase=true"
+      - "IdentityServer__Key__Type=Development"
+      #- "ASPNETCORE_Kestrel__Certificates__Default__Password=1234567890"
+      - "ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx"
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    ports:
+      - "5000:80"
+      - "5001:443"
+    restart: on-failure
