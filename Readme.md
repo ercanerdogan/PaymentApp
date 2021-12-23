@@ -1,47 +1,55 @@
--Benefits of Clean Architecture
+## I have developed my solution with Clean Architecture and REST Api
 
-    Independent of Database and Frameworks.
-    Independent of the presentation layer. Anytime we can change the UI without changing the rest of the system and business logic.
-    Highly testable, especially the core domain model and its business rules are extremely testable.
+## Benefits of Clean Architecture
 
+    - Independent of Database and Frameworks.
+    - Independent of the presentation layer. Anytime we can change the UI without 
+    changing the rest of the system and business logic. 
+    - Highly testable, especially the core domain model and its business 
+    rules are extremely testable.
 
-How to containarize our app
+## Postman Test collection file 
+    Postman Test collection file has been prepared to test the API. 
+    You can reach the collection from "PaymentApi.postman_collection.json" in this repository.
+   
+# How to containarize our app
 
--docker build -t paymentapi .
+    docker-compose up 
 
--docker images 
+## or manual register and run docker image by following instructions
 
-#get image id from this list 
+    -docker build -t paymentapi .
 
-#direct run from the image
-docker run -t payment-api
-
-#or run by image-id
-docker run -it --rm <image-id>
-
-
-dotnet dev-cers https --trust
-
-#create container from image
-
--docker create --name payment-api payment-api <image-id>
+## get image id from this list 
+    
+    -docker images 
 
 
-#start container
--docker start payment-api
+## direct run from the image
+    
+    - docker run -t payment-api
 
+## or run by image-id
 
-#stop container
--docker stop payment-api
+    - docker run -it --rm <image-id>
 
+# I have shared below which some other useful docker commands 
 
-#remove container
+## create container from image
 
-docker rm payment-api
+    -docker create --name payment-api payment-api <image-id>
 
-#remove docker image by id 
+## start container
+    -docker start payment-api
 
-docker rmi <image-id>
+## stop container
+    -docker stop payment-api
 
+## remove container
 
+    -docker rm payment-api
+
+## remove docker image by id 
+
+    docker rmi <image-id>
 
